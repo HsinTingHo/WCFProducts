@@ -42,17 +42,17 @@ namespace ProductClient
         }
         static void Main(string[] args)
         {
-            string varificationCode = "a1f8e53a-6614-4c59-96e9-93932b79f015";
+            string varificationCode;
            
             //set up proxy
             ServiceReference1.OrderingsvcClient proxy = new ServiceReference1.OrderingsvcClient("BasicHttpBinding_Ordering.svc");
 
             //set up user info
             ServiceReference1.UserInformation user = new ServiceReference1.UserInformation();
-            user.AccountNumber = "804970";
-            user.UserName = "804970.pdiautoparts";
-            user.VerificationCode = new Guid(varificationCode);
-            user.UserPassword = "pdiap";
+            //user.AccountNumber;
+            //user.UserName;
+            //user.VerificationCode = new Guid(varificationCode);
+            //user.UserPassword;
 
 
 
