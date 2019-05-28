@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="LKQCorp.LKQIntegrationService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Ordering" targetNamespace="LKQCorp.LKQIntegrationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="LKQCorp.LKQIntegrationService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+      <xs:element name="CreateOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="request" nillable="true" type="q1:OrderingRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="CreateOrderResult" nillable="true" type="q2:CallResponseOfOrderingResponse4MCb5AyH" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckDropShipAvailability">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="request" nillable="true" type="q3:CheckDropShipAvailabilityRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckDropShipAvailabilityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="CheckDropShipAvailabilityResult" nillable="true" type="q4:CallResponseOfArrayOfPartWithQuantityResult4MCb5AyH" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReserveParts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="request" nillable="true" type="q5:ReservePartsRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReservePartsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="ReservePartsResult" nillable="true" type="q6:CallResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckDropShipAvailabilityWithFreight">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="request" nillable="true" type="q7:CheckDropShipAvailabilityRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckDropShipAvailabilityWithFreightResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="CheckDropShipAvailabilityWithFreightResult" nillable="true" type="q8:CallResponseOfPartsWithQuantityResultSet4MCb5AyH" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckOutOfStockNationalAvailability">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="request" nillable="true" type="q9:CheckOutOfStockNationalAvailabilityRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckOutOfStockNationalAvailabilityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="CheckOutOfStockNationalAvailabilityResult" nillable="true" type="q10:CallResponseOfArrayOfOutOfStockNationalAvailabilityResult4MCb5AyH" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="OrderingRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q1:UserRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AMPurchaseOrderNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="CopyMethod" type="tns:OrderCopyMethodType" />
+              <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="FreightCharges" type="xs:decimal" />
+              <xs:element minOccurs="0" name="KeyTrackInfo" nillable="true" type="tns:KeyTrackOrderInfo" />
+              <xs:element minOccurs="0" name="LiftgateRequired" nillable="true" type="xs:boolean" />
+              <xs:element minOccurs="0" name="LineItemTypes" type="tns:OrderPartType" />
+              <xs:element minOccurs="0" name="LineItems" nillable="true" type="tns:ArrayOfOrderLineItem" />
+              <xs:element minOccurs="0" name="PartnerCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="RepairOrderNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="ResidentialDelivery" nillable="true" type="xs:boolean" />
+              <xs:element minOccurs="0" name="SalvagePaymentInformation" nillable="true" type="tns:SalvagePaymentInformation" />
+              <xs:element minOccurs="0" name="SalvagePurchaseOrderNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="SaturdayDelivery" nillable="true" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ShipFromWarehouse" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="ShipToAddress" nillable="true" type="tns:OrderShipToAddress" />
+              <xs:element minOccurs="0" name="SignatureRequired" nillable="true" type="xs:boolean" />
+              <xs:element minOccurs="0" name="SpecialInstructions" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="WrittenBy" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="OrderingRequest" nillable="true" type="tns:OrderingRequest" />
+      <xs:simpleType name="OrderCopyMethodType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotSet" />
+          <xs:enumeration value="None" />
+          <xs:enumeration value="Email" />
+          <xs:enumeration value="Fax" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="OrderCopyMethodType" nillable="true" type="tns:OrderCopyMethodType" />
+      <xs:complexType name="KeyTrackOrderInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClaimNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InsuranceCompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeyTrackRepairOrderNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VINNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KeyTrackOrderInfo" nillable="true" type="tns:KeyTrackOrderInfo" />
+      <xs:simpleType name="OrderPartType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotSet" />
+          <xs:enumeration value="Aftermarket" />
+          <xs:enumeration value="Salvage" />
+          <xs:enumeration value="Both" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="OrderPartType" nillable="true" type="tns:OrderPartType" />
+      <xs:complexType name="ArrayOfOrderLineItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderLineItem" nillable="true" type="tns:OrderLineItem" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfOrderLineItem" nillable="true" type="tns:ArrayOfOrderLineItem" />
+      <xs:complexType name="OrderLineItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CommentForPart" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommentForPickTicket" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerCost" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Freight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LineComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+          <xs:element minOccurs="0" name="UnitOfMeasure" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsedPart" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderLineItem" nillable="true" type="tns:OrderLineItem" />
+      <xs:complexType name="SalvagePaymentInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Method" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SalvagePaymentInformation" nillable="true" type="tns:SalvagePaymentInformation" />
+      <xs:complexType name="OrderShipToAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressLine1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressLine3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipToCodeType" type="tns:ShippingAddressType" />
+          <xs:element minOccurs="0" name="ShipToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipVia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderShipToAddress" nillable="true" type="tns:OrderShipToAddress" />
+      <xs:simpleType name="ShippingAddressType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotSet" />
+          <xs:enumeration value="Default" />
+          <xs:enumeration value="Manual" />
+          <xs:enumeration value="Prelude" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ShippingAddressType" nillable="true" type="tns:ShippingAddressType" />
+      <xs:complexType name="OrderingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AftermarketOrderNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalvageOrderNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderingResponse" nillable="true" type="tns:OrderingResponse" />
+      <xs:complexType name="CheckDropShipAvailabilityRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q2:UserRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PartsWithQuantity" nillable="true" type="tns:ArrayOfPartWithQuantityRequest" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CheckDropShipAvailabilityRequest" nillable="true" type="tns:CheckDropShipAvailabilityRequest" />
+      <xs:complexType name="ArrayOfPartWithQuantityRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PartWithQuantityRequest" nillable="true" type="tns:PartWithQuantityRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPartWithQuantityRequest" nillable="true" type="tns:ArrayOfPartWithQuantityRequest" />
+      <xs:complexType name="PartWithQuantityRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PartWithQuantityRequest" nillable="true" type="tns:PartWithQuantityRequest" />
+      <xs:complexType name="ArrayOfPartWithQuantityResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PartWithQuantityResult" nillable="true" type="tns:PartWithQuantityResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPartWithQuantityResult" nillable="true" type="tns:ArrayOfPartWithQuantityResult" />
+      <xs:complexType name="PartWithQuantityResult">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:PartWithQuantityRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PartWithQuantityResult" nillable="true" type="tns:PartWithQuantityResult" />
+      <xs:complexType name="ReservePartsRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q3:UserRequest">
+            <xs:sequence>
+              <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PartsList" nillable="true" type="q4:ArrayOfstring" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ReservePartsRequest" nillable="true" type="tns:ReservePartsRequest" />
+      <xs:complexType name="PartsWithQuantityResultSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FreightRulesFound" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Parts" nillable="true" type="tns:ArrayOfPartWithFreight" />
+          <xs:element minOccurs="0" name="TotalFreightCharge" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PartsWithQuantityResultSet" nillable="true" type="tns:PartsWithQuantityResultSet" />
+      <xs:complexType name="ArrayOfPartWithFreight">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PartWithFreight" nillable="true" type="tns:PartWithFreight" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPartWithFreight" nillable="true" type="tns:ArrayOfPartWithFreight" />
+      <xs:complexType name="PartWithFreight">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PartWithFreight" nillable="true" type="tns:PartWithFreight" />
+      <xs:complexType name="CheckOutOfStockNationalAvailabilityRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q5:UserRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="PartsWithQuantity" nillable="true" type="tns:ArrayOfPartWithQuantityRequest" />
+              <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CheckOutOfStockNationalAvailabilityRequest" nillable="true" type="tns:CheckOutOfStockNationalAvailabilityRequest" />
+      <xs:complexType name="ArrayOfOutOfStockNationalAvailabilityResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OutOfStockNationalAvailabilityResult" nillable="true" type="tns:OutOfStockNationalAvailabilityResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfOutOfStockNationalAvailabilityResult" nillable="true" type="tns:ArrayOfOutOfStockNationalAvailabilityResult" />
+      <xs:complexType name="OutOfStockNationalAvailabilityResult">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:PartWithQuantityResult">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Warehouse" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="OutOfStockNationalAvailabilityResult" nillable="true" type="tns:OutOfStockNationalAvailabilityResult" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserRequestInfo" nillable="true" type="tns:UserInformation" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserRequest" nillable="true" type="tns:UserRequest" />
+      <xs:complexType name="UserInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BusinessTypeForAccountNumber" type="tns:AccountNumberBusinessType" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+          <xs:element name="VerificationCode" type="ser:guid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserInformation" nillable="true" type="tns:UserInformation" />
+      <xs:simpleType name="AccountNumberBusinessType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Aftermarket" />
+          <xs:enumeration value="Salvage" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AccountNumberBusinessType" nillable="true" type="tns:AccountNumberBusinessType" />
+      <xs:complexType name="CallResponseOfOrderingResponse4MCb5AyH">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="CallResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="OrderingResponse" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:CallResponse">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="Value" nillable="true" type="q1:OrderingResponse" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CallResponseOfOrderingResponse4MCb5AyH" nillable="true" type="tns:CallResponseOfOrderingResponse4MCb5AyH" />
+      <xs:complexType name="CallResponse">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorMessages" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CallResponse" nillable="true" type="tns:CallResponse" />
+      <xs:complexType name="CallResponseOfArrayOfPartWithQuantityResult4MCb5AyH">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="CallResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="ArrayOfPartWithQuantityResult" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:CallResponse">
+            <xs:sequence>
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="Value" nillable="true" type="q3:ArrayOfPartWithQuantityResult" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CallResponseOfArrayOfPartWithQuantityResult4MCb5AyH" nillable="true" type="tns:CallResponseOfArrayOfPartWithQuantityResult4MCb5AyH" />
+      <xs:complexType name="CallResponseOfPartsWithQuantityResultSet4MCb5AyH">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="CallResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="PartsWithQuantityResultSet" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:CallResponse">
+            <xs:sequence>
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="Value" nillable="true" type="q4:PartsWithQuantityResultSet" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CallResponseOfPartsWithQuantityResultSet4MCb5AyH" nillable="true" type="tns:CallResponseOfPartsWithQuantityResultSet4MCb5AyH" />
+      <xs:complexType name="CallResponseOfArrayOfOutOfStockNationalAvailabilityResult4MCb5AyH">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType Name="CallResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="ArrayOfOutOfStockNationalAvailabilityResult" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" />
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:CallResponse">
+            <xs:sequence>
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Ordering.Entities" minOccurs="0" name="Value" nillable="true" type="q5:ArrayOfOutOfStockNationalAvailabilityResult" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CallResponseOfArrayOfOutOfStockNationalAvailabilityResult4MCb5AyH" nillable="true" type="tns:CallResponseOfArrayOfOutOfStockNationalAvailabilityResult4MCb5AyH" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Ordering.svc_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckDropShipAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDropShipAvailability" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckDropShipAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDropShipAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_ReserveParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReserveParts" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_ReserveParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservePartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckDropShipAvailabilityWithFreight_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDropShipAvailabilityWithFreight" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckDropShipAvailabilityWithFreight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDropShipAvailabilityWithFreightResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckOutOfStockNationalAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutOfStockNationalAvailability" />
+  </wsdl:message>
+  <wsdl:message name="Ordering.svc_CheckOutOfStockNationalAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutOfStockNationalAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Ordering.svc">
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CreateOrder" message="tns:Ordering.svc_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CreateOrderResponse" message="tns:Ordering.svc_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDropShipAvailability">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailability" message="tns:Ordering.svc_CheckDropShipAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailabilityResponse" message="tns:Ordering.svc_CheckDropShipAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReserveParts">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/ReserveParts" message="tns:Ordering.svc_ReserveParts_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/ReservePartsResponse" message="tns:Ordering.svc_ReserveParts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDropShipAvailabilityWithFreight">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailabilityWithFreight" message="tns:Ordering.svc_CheckDropShipAvailabilityWithFreight_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailabilityWithFreightResponse" message="tns:Ordering.svc_CheckDropShipAvailabilityWithFreight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutOfStockNationalAvailability">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckOutOfStockNationalAvailability" message="tns:Ordering.svc_CheckOutOfStockNationalAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Ordering.svc/CheckOutOfStockNationalAvailabilityResponse" message="tns:Ordering.svc_CheckOutOfStockNationalAvailability_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Ordering.svc" type="tns:Ordering.svc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Ordering.svc/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDropShipAvailability">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveParts">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Ordering.svc/ReserveParts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDropShipAvailabilityWithFreight">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Ordering.svc/CheckDropShipAvailabilityWithFreight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutOfStockNationalAvailability">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Ordering.svc/CheckOutOfStockNationalAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ordering">
+    <wsdl:port name="BasicHttpBinding_Ordering.svc" binding="tns:BasicHttpBinding_Ordering.svc">
+      <soap:address location="http://lkqintegrationqc.ekeyconnect.com/Ordering.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
